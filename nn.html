@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر NN | NN Store</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* شبكة 3x3 */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    /* حاوية الصورة */
+    .hoodie-preview {
+      height: 280px;
+      position: relative;
+      background-color: #eee;
+    }
+
+    /* ضبط حجم الصورة داخل الكرت */
+    .hoodie-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* الشعار المائي الثابت */
+    .logo-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #111;
+      backdrop-filter: blur(4px);
+    }
+
+    .product-details {
+      padding: 20px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #111;
+      margin-bottom: 15px;
+    }
+
+    .btn-add {
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.2s ease;
+    }
+
+    .btn-add:hover {
+      background-color: #333;
+    }
+
+    /* للتجاوب مع الجوال */
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NN STORE</h1>
+    <p>تشكيلة البلوفرات الحصرية - شتاء 2026</p>
+  </header>
+
+  <div class="container">
+    <div class="products-grid">
+
+      <!-- 1. أبيض -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/white-hoodie.jpg" alt="بلوفر أبيض - أسد" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر أبيض - طبعة أسد (Lion)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 2. أسود -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/black-hoodie.jpg" alt="بلوفر أسود - Narwhal" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر أسود - طبعة نروال (Narwhal)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 3. كحلي -->
+<div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/navy-hoodie.jpg" alt="بلوفر كحلي - Nighthawk" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر كحلي - طبعة صقر الليل (Nighthawk)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 4. رمادي -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/grey-hoodie.jpg" alt="بلوفر رمادي - Nautilus" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر رمادي - طبعة نوتيلوس (Nautilus)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 5. زيتوني -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/olive-hoodie.jpg" alt="بلوفر زيتوني - Neon Tetra" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر زيتوني - طبعة نيون تيترا (Neon)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 6. بني -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/brown-hoodie.jpg" alt="بلوفر بني - Newt" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر بني - طبعة سمندل (Newt)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 7. بيج -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/beige-hoodie.jpg" alt="بلوفر بيج - Ninox" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر بيج - طبعة بومة (Ninox Owl)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 8. عنابي -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/burgundy-hoodie.jpg" alt="بلوفر عنابي - Numbat" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر عنابي - طبعة نومبات (Numbat)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+      <!-- 9. خردلي -->
+      <div class="product-card">
+        <div class="hoodie-preview">
+          <span class="logo-badge">NN</span>
+          <img src="images/mustard-hoodie.jpg" alt="بلوفر خردلي - Nenday Parakeet" class="hoodie-img">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">بلوفر خردلي - طبعة ببغاء (Nenday)</h3>
+          <div class="product-price">199 ر.س</div>
+          <button class="btn-add">إضافة للسلة</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
